@@ -1,0 +1,28 @@
+<div class="flex full-width row back white">
+    <div class="column space-between-center flex full-height1 width-20p border-box z-index">
+        <div class="full-width center-center flex">
+            <img src="../../../assets/images/if-logo-removebg-preview.png" alt="alt" width="100%">
+        </div>
+        <div class="text-center pp">
+            <h2>IPHUNGA FRAGRANCES</h2>
+        </div>
+        <div class="flex column center-center gap-05em">
+            <p class="pointer" matTooltip="Coming Soon"><i class="fa fa-whatsapp" style="font-size:35px"></i></p>
+            <p class="pointer" matTooltip="Coming Soon"><i class="fa fa-instagram" style="font-size:35px"></i></p>
+        </div>
+
+    </div>
+    <div class="full-width flex column">
+        <div class="end flex gap-1em padding-10px border-box z-index">
+            <h3 routerLink="./home" routerLinkActive="active" class="pointer">Home</h3>
+            <h3 routerLink="./products" routerLinkActive="active" class="pointer">Products</h3>
+            <button mat-icon-button matTooltip="Cart" (click)="goToCart()">
+                <mat-icon [matBadge]="items">shopping_cart</mat-icon>
+            </button>
+        </div>
+        <mat-divider class="full-width"></mat-divider>
+        <div class="full-width full-height z-index">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

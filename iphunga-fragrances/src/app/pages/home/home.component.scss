@@ -1,0 +1,63 @@
+.back {
+    // background-image: url('../../../assets/images/wallpaper1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure full coverage */
+    background-position: center;
+    height: 100%;
+    position: relative;
+  
+    /* Overlay Effect */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay (adjust opacity) */
+        backdrop-filter: blur(5px); /* Blur effect */
+        z-index: 1;
+    }
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+/* Ensure text stays above the overlay */
+.banner {
+    // position: absolute;
+    left: 2em;
+    bottom: 2em;
+    color: white; /* Ensures text is readable */
+    z-index: 2; /* Higher than overlay */
+  
+    h2 {
+        font-size: xxx-large;
+    }
+    p {
+        font-size: x-large;
+    }
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cta {
+    background-color: #839a6b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Responsive adjustment */
+@media only screen and (max-width: 600px) {
+    .bot {
+        flex-direction: column;
+    }
+}

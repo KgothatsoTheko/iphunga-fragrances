@@ -1,0 +1,282 @@
+// Import Angular Material theming utilities
+@use '@angular/material' as mat;
+
+// Include core styles for Angular Material
+@include mat.core();
+
+// Define the color palettes for Rose Red theme
+$rose-red-primary: mat.define-palette(mat.$pink-palette, 700); // Deep Pink
+$rose-red-accent: mat.define-palette(mat.$red-palette, A200, A100, A400); // Bright Red
+$rose-red-warn: mat.define-palette(mat.$red-palette); // Standard Red for warnings
+
+// Create the Rose Red theme (light theme)
+$rose-red-theme: mat.define-light-theme((
+  color: (
+    primary: $rose-red-primary,
+    accent: $rose-red-accent,
+    warn: $rose-red-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Apply the theme globally
+@include mat.all-component-themes($rose-red-theme);
+
+// Global styles
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+//colors
+$light-caramel: #839a6b;
+$caramel: #e6be89;
+$black: #000000;
+$white: #fff;
+
+// Sizes
+.full-width {
+  width: 100% !important;
+}
+
+.width-25p {
+  width: 25%;
+}
+
+.width-20p {
+  width: 20%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-height1 {
+  height: 100vh;
+}
+
+.half-height {
+  height: 50%;
+}
+
+// flex
+.flex {
+  display: flex !important;
+}
+
+.row {
+  flex-direction: row !important;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+// flex-layout
+.center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.center1 {
+  justify-content: center;
+}
+
+.end {
+  justify-content: end;
+  align-items: center;
+}
+
+.space-between-center {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.align-center1 {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+// Padding 
+.no-padding {
+  padding: 0 !important;
+}
+
+// Paddings
+.p-1em {
+  padding: 1em;
+}
+
+.padding-5px {
+  padding: 5px;
+}
+
+.padding-left-5px {
+  padding-left: 5px;
+}
+
+.padding-right-5px {
+  padding-right: 5px;
+}
+
+.padding-10px {
+  padding: 10px;
+}
+
+.padding-20px {
+  padding: 20px;
+}
+
+// margin
+.no-margin {
+  margin: 0 !important;
+}
+
+.margin-10px {
+  margin: 10px;
+}
+
+.margin-top-64px {
+  margin-top: 64px;
+}
+
+.margin-top-10px {
+  margin-top: 17px !important;
+}
+
+.m-b-1em {
+  margin-bottom: 1em;
+}
+
+// gaps 
+.gap-05em {
+  gap: .5em;
+}
+
+.gap-1em {
+  gap: 1em;
+}
+
+.gap-2em {
+  gap: 2em;
+}
+
+// postions 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.z-index {
+  z-index: 1;
+}
+
+.top-0p {
+  top: 0;
+}
+
+
+.left-0p {
+  left: 0;
+}
+
+.right-0p {
+  right: 0;
+}
+
+.bottom-0p {
+  bottom: 0;
+}
+
+
+// cursor 
+.pointer {
+  cursor: pointer;
+}
+
+// border 
+.border-radius-10px {
+  border-radius: 10px;
+}
+
+.border-radius-20px {
+  border-radius: 20px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+// Colors
+
+.caramel-bg {
+  background-color: $caramel !important;
+}
+
+.light-caramel-bg {
+background-color: $light-caramel !important;
+}
+
+.white-bg {
+  background-color: $white !important;
+  }
+
+.caramel {
+  color: $caramel;
+}
+
+.light-caramel {
+  color: $light-caramel;
+}
+
+.white {
+  color: $white !important;
+}
+
+.black {
+  color: $black !important;
+}
+
+.hover1:hover{
+  background-color: $light-caramel;
+}
+
+.hover2:hover{
+  background-color: $caramel;
+  color: $white;
+}
+
+.active {
+  color: $light-caramel !important;
+}
+
+.mat-badge-content {
+  background-color: $light-caramel !important;
+}
+
+mat-toolbar {
+  height: 64px;
+  background-color: transparent !important;
+  z-index: 1 !important;
+  position: absolute !important;
+}

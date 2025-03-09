@@ -1,0 +1,25 @@
+.width-35p {
+    width: 35%;
+}
+
+.btn1 {
+    background-color: #839a6b;
+    border: 1px solid #839a6b;
+    border-radius: 50%;
+}
+
+.border-radius-20px {
+    border-radius: 20px;
+}
+
+.make-bg {
+    background-color: white;
+    padding: 10px;
+}
+
+/* Responsive adjustment */
+@media only screen and (max-width: 600px) {
+    .make100p {
+        width: 100%;
+    }
+}
