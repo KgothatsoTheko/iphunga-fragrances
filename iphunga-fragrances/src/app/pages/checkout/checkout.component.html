@@ -1,1 +1,60 @@
-<p>checkout works!</p>
+<div class="full-width flex column gap-1em padding-10px border-box">
+    <h3 class="line">Complete Order:</h3>
+    <mat-card class="padding-10px border-box black flex full-width column">
+        <div class="flex row full-width makeColumn">
+            <div class="half-width make100p flex column gap-1em">
+                <form class="flex column gap-1em" [formGroup]="checkOutForm">
+                    <mat-form-field class="full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName = "firstName" required>
+                        <mat-error *ngIf="checkOutForm.controls['firstName'].hasError('required')">
+                            First Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName = "lastName" required>
+                        <mat-error *ngIf="checkOutForm.controls['lastName'].hasError('required')">
+                            Last Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput formControlName = "email" required>
+                        <mat-error *ngIf="checkOutForm.controls['email'].hasError('email') && !checkOutForm.controls['email'].hasError('required')">
+                            Please enter a valid email address
+                          </mat-error>
+                          <mat-error *ngIf="checkOutForm.controls['email'].hasError('required')">
+                            Email is <strong>required</strong>
+                          </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Select Shipping method</mat-label>
+                        <mat-select formControlName="shippingMethod" required>
+                          <mat-option value="R60">PAXI (+R60)</mat-option>
+                          <mat-option value="R100">Aramex (+R100)</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </form>
+            </div>
+            <div class="half-width make100p column flex padding-10px border-box">
+                <div class="space-between-center flex">
+                    <p>Subtotal</p>
+                    <p>R 1301</p>
+                </div>
+                <div class="space-between-center flex">
+                    <p>Shipping</p>
+                    <p>{{checkOutForm.value.shippingMethod}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="space-between-center flex">
+                    <p><strong>Total</strong></p>
+                    <p>R 1401</p>
+                </div>
+               <div class="full-width">
+                <button class="go full-width center-center">Place Order</button>
+               </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

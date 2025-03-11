@@ -210,6 +210,11 @@ $white: #fff;
   cursor: pointer;
 }
 
+//underline
+.line {
+  text-decoration: underline;
+}
+
 // border 
 .border-radius-10px {
   border-radius: 10px;
@@ -274,9 +279,12 @@ background-color: $light-caramel !important;
   background-color: $light-caramel !important;
 }
 
-mat-toolbar {
-  height: 64px;
-  background-color: transparent !important;
-  z-index: 1 !important;
-  position: absolute !important;
+@media only screen and (max-width: 600px) {
+  .makeColumn {
+      flex-direction: column !important;
+  }
+
+  .make100p {
+    width: 100%;
+  }
 }

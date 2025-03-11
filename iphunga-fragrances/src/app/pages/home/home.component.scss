@@ -55,6 +55,16 @@
     cursor: pointer;
 }
 
+.go {
+    background-color: #bb9d23;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 /* Responsive adjustment */
 @media only screen and (max-width: 600px) {
     .bot {

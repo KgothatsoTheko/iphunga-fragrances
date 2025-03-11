@@ -1,31 +1,31 @@
 <div class="column full-width flex gap-1em padding-10px border-box">
-    <div class="flex gap-05em align-center1 full-width">
+    <div class="flex gap-05em align-center1 full-width pointer" (click)="goBack()">
         <mat-icon>keyboard_arrow_left</mat-icon>
         <p>Back</p>
     </div>
-    <div class="flex row full-width">
-        <div class="column flex half-width">
-            <div class="flex gap-1em">
+    <div class="flex row full-width makeColumn">
+        <div class="column flex half-width make100p center-center">
+            <img src="../../../assets/images/Generate_Images_for_Free-removebg-preview.png" alt="dummy1" width="100%">
+        </div>
+        <div class="column flex half-width make100p">
+            <div class="flex gap-1em space-between-center">
                 <h3 class="text-center">Oud Boukhour Kyara Perfume</h3>
-                <p>R<span>275</span></p>
+                <p>{{fontStyleControl.value}}</p>
             </div>
             <span>Description</span>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, a. Aliquam, ipsam. Ab numquam, explicabo impedit facere te</p>
             <span>Capacity</span><br>
             <mat-button-toggle-group name="fontStyle" [formControl]="fontStyleControl">
-                <mat-button-toggle value="50 ML" class="half-width">50 ML</mat-button-toggle>
-                <mat-button-toggle value="100 ML" class="half-width">100 ML</mat-button-toggle>
+                <mat-button-toggle value="R275" class="half-width">50 ML</mat-button-toggle>
+                <mat-button-toggle value="R550" class="half-width">100 ML</mat-button-toggle>
               </mat-button-toggle-group>
-              <p>Chosen value is {{fontStyleControl.value}}</p>
+              <p>Chosen ml is {{fontStyleControl.value}}</p>
               <div class="flex center-center">
-                <button class="cta">
+                <button class="cta" (click)="goToCart()">
                     <span>Add to Cart</span>
                     <mat-icon>shopping_cart</mat-icon>
                 </button>
               </div>
-        </div>
-        <div class="column flex half-width">
-            <img src="../../../assets/images/Generate_Images_for_Free-removebg-preview.png" alt="dummy1" width="100%">
         </div>
     </div>
 </div>

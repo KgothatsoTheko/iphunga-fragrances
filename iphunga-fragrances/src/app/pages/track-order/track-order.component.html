@@ -1,1 +1,22 @@
-<p>track-order works!</p>
+<div class="column full-width flex padding-10px gap-1em border-box">
+    <div class="flex center-center">
+        <h3>Track Order:</h3>
+    </div>
+    <div class="flex center-center">
+        <form [formGroup]="trackForm" class="full-width">
+            <mat-form-field class="full-width">
+                <mat-label>Invoice Number</mat-label>
+                <input matInput formControlName = "invoiceNumber" required>
+                <mat-error *ngIf="trackForm.controls['invoiceNumber'].hasError('required')">
+                    Invoice Number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="flex center-cenyter">
+        <button class="go full-width center-center" (click)="trackOrder()">Track Order</button>
+    </div>
+    <mat-card *ngIf="show" class="flex black full-width padding-10px border-box">
+        <h3>Order Status: {{status}}</h3>
+    </mat-card>
+</div>

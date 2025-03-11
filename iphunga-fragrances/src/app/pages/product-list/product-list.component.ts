@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../modules/material/material.module';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,4 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductListComponent {
 
+  constructor(private router: Router){}
+
+  goToProduct(){
+    this.router.navigate(['/landing/product-detail'])
+  }
 }

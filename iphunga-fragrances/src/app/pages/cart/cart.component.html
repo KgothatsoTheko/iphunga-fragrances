@@ -1,1 +1,51 @@
-<p>cart works!</p>
+<div class="column full-width flex gap-1em padding-10px border-box">
+    <div class="flex gap-05em align-center1 full-width pointer" (click)="goBack()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        <p>Continue shopping</p>
+    </div>
+    <mat-card class="padding-10px border-box black flex full-width column">
+        <div class="flex center-center full-width">
+            <img src="../../../assets/images/if-logo-removebg-preview.png" alt="logo" width="15%">
+        </div>
+        <div class="flex gap-05em align-center1 full-width">
+            <h3>Total Price: R550</h3>
+        </div>
+        <div class="flex row full-width makeColumn">
+            <div class="half-width make100p flex column gap-1em">
+                <span>Product Information</span>
+                <mat-divider></mat-divider>
+                <div class="flex full-width column">
+                    <div class="flex row full-width gap-1em">
+                        <div class="half-width flex center-center">
+                            <img src="../../../assets/images/Generate_Images_for_Free-removebg-preview.png" alt="dum" width="100%">
+                        </div>
+                        <div class="half-width flex column">
+                            <h4>Eternity Cologne</h4>
+                            <mat-divider></mat-divider>
+                            <p><strong>Size:</strong> 50ml</p>
+                            <p class="no-margin">R 550</p><br>
+                            <mat-form-field class="greener">
+                                <mat-label>Quantity</mat-label>
+                                <mat-select>
+                                  <mat-option value="1">1</mat-option>
+                                  <mat-option value="2">2</mat-option>
+                                  <mat-option value="3">3</mat-option>
+                                  <mat-option value="4">4</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="flex center-center pointer hoverRed">
+                        <mat-icon>cancel</mat-icon>
+                        <span class="line">Remove</span>
+                    </div>
+                </div>
+            </div>
+            <div class="half-width make100p flex padding-10px border-box">
+               <div class="full-width">
+                <button class="cta full-width center-center" (click)="goToCheckout()">Proceed to Checkout</button>
+               </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
