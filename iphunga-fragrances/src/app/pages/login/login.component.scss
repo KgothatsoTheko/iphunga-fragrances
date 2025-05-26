@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+.arc {
+    font-family: "Archivo", serif;
+}
+
+.lightertext {
+    color: grey;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.bolderText {
+    font-size: xx-large;
+    font-weight: 800;
+    color: #839a6b;
+}
+
+.border2 {
+    border: 1px solid white;
+}
+
+.op-08 {
+    opacity: 1;
+}
+
+.t-5 {
+    top: 0%;
+    left: 0.5%;
+}
+
+.middleView {
+    width: 4%;
+    left: 46.6%;
+    top: 9%;
+    border: 1px solid white;
+    background: white;
+    z-index: 1;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.border1 {
+    border: 1px gray solid;
+}
+
+@media only screen and (max-width: 600px) {
+    .smaller {
+        position: absolute;
+        h2 {
+            display: none;
+        }
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+
+    .makeEnd {
+        align-items: end;
+    }
+
+    .TopView {
+    position: unset;
+    width: 100%;
+    border: unset;
+    background: #e6be89;
+    }
+
+    .addz-index {
+        z-index: 1;
+    }
+
+    .no-green1 {
+        background-color: unset;
+    }
+
+    .greener {
+        background-color: #e6be89;
+    }
+
+    .make100p {
+        width: 100%;
+        height: 100vh;
+        color: black;
+    }
+
+    .makeWhite {
+        color: black !important;
+    }
+  }

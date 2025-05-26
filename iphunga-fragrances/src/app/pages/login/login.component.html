@@ -1,0 +1,26 @@
+<div class="full-width flex column greener arc">
+    <div class="flex row full-width fullHeight makeEnd">
+        <div class=" flex center-center smaller light-green-bg no-green1">
+            <img src="../../../assets/images/if-logo-removebg-preview.png" width="50%" alt="logo" class="relative round op-08">
+        </div>
+        <div class="half-width make100p addz-index padding-10px border-box">
+            <div class="flex column gap-1em">
+                <div>
+                    <h2 class="bolderText makeWhite">Welcome <br> Back!</h2>
+                    <p class="no-margin"><small>Please log in to your account</small></p>
+                </div>
+                <form [formGroup]="loginForm">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email Address</mat-label>
+                        <input type="email" matInput required formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput required formControlName="password">
+                    </mat-form-field>
+                </form>
+                <button mat-stroked-button class="black pointer light-caramel-bg full-width" (click)="loginBtn()">Login</button>
+            </div>
+        </div>
+    </div>
+</div>

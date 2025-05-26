@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<div class="padding-10px flex black column border-box gap-1em full-width">
+    <h2 class="text-center white">Overview:</h2>
+    <div class="flex gap-1em row makeColumn wrap">
+        <mat-card class="padding-10px border-box cards flex center-center column pointer hover2" (click)="addProduct()">
+            <mat-icon>
+                add_circle
+            </mat-icon>
+            <h3>Add Products</h3>
+        </mat-card>
+        <mat-card class="padding-10px border-box cards flex center-center column pointer hover2">
+            <mat-icon>
+                event
+            </mat-icon>
+            <h3>Manage Products</h3>
+        </mat-card>
+        <mat-card class="padding-10px border-box cards flex center-center column pointer hover2">
+            <mat-icon>
+                event
+            </mat-icon>
+            <h3>Manage Orders</h3>
+        </mat-card>
+        <mat-card class="padding-10px border-box cards flex center-center column pointer hover2">
+            <mat-icon>
+                logout
+            </mat-icon>
+            <h3>Log Out</h3>
+        </mat-card>
+    </div>
+</div>

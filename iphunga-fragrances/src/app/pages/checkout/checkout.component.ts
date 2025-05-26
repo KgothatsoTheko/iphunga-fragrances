@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CheckoutComponent {
 
-  constructor(private api: ApiService, private snackbar: MatSnackBar) {}
+  constructor(private snackbar: MatSnackBar) {}
 
   checkOutForm = new FormGroup({
     firstName: new FormControl('',Validators.required),
