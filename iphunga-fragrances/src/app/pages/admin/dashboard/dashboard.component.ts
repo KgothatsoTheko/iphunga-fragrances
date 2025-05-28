@@ -21,7 +21,12 @@ export class DashboardComponent {
   addProduct(){
     this.dialog.open(AddProductsComponent, {
       disableClose: true,
+      height: '100vh'
     })
+  }
+
+  goToProducts(){
+    this.router.navigate(['/landing/admin-manage-products'])
   }
 
 }

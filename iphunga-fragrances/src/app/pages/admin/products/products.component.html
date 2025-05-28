@@ -1,1 +1,36 @@
-<p>products works!</p>
+<div class="column full-width flex gap-1em padding-10px border-box">
+    <div class="flex end white full-width gap-1em">
+        <div class="flex column pointer">
+            <h3 class="text-center">All</h3>
+         </div>
+        <div class="flex column pointer">
+           <h3 class="text-center">Female fragrance</h3>
+        </div>
+        <div class="flex column pointer">
+            <h3 class="text-center">Male fragrance</h3>
+         </div>
+    </div>
+    <div class="flex row wrap gap-1em full-width">
+        <mat-card class="flex column black width-35p make100p padding-10px border-box border-radius-20px" *ngFor="let item of allProducts">
+            <div class="end flex">
+                    <h3>{{item.name}}</h3>
+            </div>
+            <div class="full-width flex center-center">
+                <img [src]="'http://localhost:6611/api/get-file/' + item.image._id" alt="dummy1" width="100%">
+            </div>
+            <div class="flex center-center full-width">
+                <div class="half-width">
+                <h3 class="no-margin">R{{item.sizes[0].price}} - {{item.sizes[0].volume}}</h3>
+                </div>
+                <div class="half-width gap-1em flex end">
+                    <button mat-icon-button class="btn1" matTooltip="Edit Product">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button class="btn1" matTooltip="Delete Product">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

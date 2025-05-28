@@ -8,6 +8,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ProductsComponent } from './pages/admin/products/products.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'landing/home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'admin-login', component: LoginComponent},
     {path: 'admin-dashboard', component: DashboardComponent},
+    {path: 'admin-manage-products', component: ProductsComponent},
     {path: 'products', component: ProductListComponent},
     {path: 'product-detail', component: ProductDetailsComponent},
     {path: 'track-order', component: TrackOrderComponent},

@@ -21,22 +21,27 @@ export class AddProductsComponent {
   fileChoosen:any
   uploadForm: FormGroup
 
+  FormData:any
+
+
   adminForm = new FormGroup({
     name: new FormControl('', Validators.required),
     description: new FormControl('', [Validators.required]),
     category: new FormControl('', Validators.required),
-    volume: new FormControl('', Validators.required)
+    volume: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required),
+    quantity: new FormControl('', Validators.required),
      
   })
 
   category: any[] = [
-    {value: 'Male', viewValue: 'Male'},
-    {value: 'Female', viewValue: 'Female'},
+    {value: 'male', viewValue: 'male'},
+    {value: 'female', viewValue: 'female'},
   ]
 
   valume: any[] = [
-    {value: '50ml', viewValue: '100ml'},
-    {value: '50ml', viewValue: '100ml'},
+    {value: '50ml', viewValue: '50ml'},
+    {value: '100ml', viewValue: '100ml'},
   ]
 
   constructor(private dialog:MatDialogRef<AddProductsComponent>, private location: Location, private api: ApiService, private router: Router, private snackbar: MatSnackBar) {
@@ -58,34 +63,47 @@ export class AddProductsComponent {
       
           const formData = new FormData();
           formData.append('file', input.files[0], input.files[0].name)
-          console.log(formData);
-          // this.api.genericPost(`upload2/${addedMentor.fullName}`, formData).subscribe(
-          //   (resposnse:any)=> {
-          //     this.snackbar.open(`Success: ${resposnse}`, 'Ok', {duration: 3000})
-          //     console.log("res", resposnse);
-          //     this.dialog.close(true)
-          //   },
-          //   (error:any)=> {
-          //     return this.snackbar.open(`Error: ${error}`, 'Ok', {duration: 3000})
-          //   }
-          // )
+          this.FormData = input.files[0]
+          console.log(this.FormData);
         }
       }
     )}
   }
 
   login() {
-    const adminData = this.adminForm.value
-    console.log("admin form", adminData);
-    // this.api.genericPost('add-product', adminData).subscribe(
-    //   (res:any) => {
-    //     this.snackbar.open("Registered New Admin", "Ok", {duration: 3000})
-    //     this.dialog.close()
-    //   },
-    //   (error:any) => {
-    //     return this.snackbar.open(`Error: ${error}`, 'Ok', { duration: 3000 });
-    //   }
-    // )
+    const productData = {
+      name: this.adminForm.value.name,
+      description: this.adminForm.value.description,
+      category: this.adminForm.value.category,
+      image: this.FormData,
+      sizes: [
+        {price: this.adminForm.value.price,
+          volume: this.adminForm.value.volume,
+          quantity: this.adminForm.value.quantity,
+        }
+      ]
+    }
+    console.log("admin form", productData);
+    this.api.genericPost('add-product', productData).subscribe(
+      (res:any) => {
+        this.snackbar.open("New Product Added", "Ok", {duration: 3000})
+        const formData = new FormData();
+        formData.append('file', productData.image, productData.image.name)
+        this.api.genericPost(`upload/${productData.name}`, formData).subscribe(
+            (resposnse:any)=> {
+              this.snackbar.open(`Success: ${resposnse}`, 'Ok', {duration: 3000})
+              console.log("res", resposnse);
+              this.dialog.close(true)
+            },
+            (error:any)=> {
+              return this.snackbar.open(`Error: ${error}`, 'Ok', {duration: 3000})
+            }
+          )
+      },
+      (error:any) => {
+        return this.snackbar.open(`Error: ${error}`, 'Ok', { duration: 3000 });
+      }
+    )
   }
 
   cancel() {
