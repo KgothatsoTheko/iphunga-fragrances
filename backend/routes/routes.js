@@ -258,7 +258,7 @@ router.post('/upload/:name', upload.single('file'), async (req, res) => {
 });
 // get a file by id
 router.get('/get-file/:id', (req, res) => {
-    const { id } = req.params;
+const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).send("Invalid file ID");

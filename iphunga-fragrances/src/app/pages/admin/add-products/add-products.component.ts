@@ -88,11 +88,21 @@ export class AddProductsComponent {
       (res:any) => {
         this.snackbar.open("New Product Added", "Ok", {duration: 3000})
         const formData = new FormData();
-        formData.append('file', productData.image, productData.image.name)
+        formData.append('file', this.FormData, this.FormData.name)
         this.api.genericPost(`upload/${productData.name}`, formData).subscribe(
             (resposnse:any)=> {
               this.snackbar.open(`Success: ${resposnse}`, 'Ok', {duration: 3000})
               console.log("res", resposnse);
+              productData.image = resposnse.file;
+              this.api.genericUpdate(`/update-product/${res._id}`, productData).subscribe(
+                (response1:any) => {
+                  this.snackbar.open(`Success: ${response1}`, 'Ok', {duration: 3000})
+                  console.log("res", response1);
+                },
+                (error:any)=> {
+              return this.snackbar.open(`Error: ${error}`, 'Ok', {duration: 3000})
+              }
+              )
               this.dialog.close(true)
             },
             (error:any)=> {
