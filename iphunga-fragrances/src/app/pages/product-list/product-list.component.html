@@ -11,16 +11,16 @@
          </div>
     </div>
     <div class="flex row wrap gap-1em full-width">
-        <mat-card class="flex column black width-35p make100p padding-10px border-box border-radius-20px">
+        <mat-card class="flex column black width-35p make100p padding-10px border-box border-radius-20px" *ngFor="let item of allProducts">
             <div class="end flex">
-                <h3>From R275 - R550</h3>
+                <h3>R{{item.sizes[0].price}}</h3>
             </div>
             <div class="full-width flex center-center">
-                <img src="../../../assets/images/Generate_Images_for_Free-removebg-preview.png" alt="dummy1" width="100%">
+                <img [src]="'http://localhost:6611/api/get-file/' + item.image.id" alt="dummy1" width="100%">
             </div>
             <div class="flex center-center full-width">
                 <div class="half-width">
-                    <h3>Oud Boukhour Kyara</h3>
+                    <h3>{{item.name}}</h3>
                 </div>
                 <div class="half-width flex end">
                     <button mat-icon-button class="btn1" matTooltip="View Product" (click)="goToProduct()">
