@@ -20,8 +20,8 @@ Welcome to **Iphunga Fragrances**, your one-stop online store for luxury perfume
 ## 🚀 Tech Stack
 
 - **Frontend:** Angular / TypeScript / HTML / CSS
-- **Backend:** Firebase (Hosting & Authentication)
-- **Database:** Firebase Firestore
+- **Backend:** Node.js & Express.js
+- **Database:** MongoDB
 - **Deployment:** Firebase Hosting
 
 ---
