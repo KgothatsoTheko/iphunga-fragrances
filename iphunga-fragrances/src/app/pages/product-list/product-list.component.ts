@@ -33,7 +33,7 @@ export class ProductListComponent {
           )
     }
 
-  goToProduct(){
-    this.router.navigate(['/landing/product-detail'])
+  goToProduct(item:any){
+    this.router.navigate([`/landing/product-detail`, item._id])
   }
 }

@@ -18,7 +18,7 @@ export const routes: Routes = [
     {path: 'admin-dashboard', component: DashboardComponent},
     {path: 'admin-manage-products', component: ProductsComponent},
     {path: 'products', component: ProductListComponent},
-    {path: 'product-detail', component: ProductDetailsComponent},
+    {path: 'product-detail/:id', component: ProductDetailsComponent},
     {path: 'track-order', component: TrackOrderComponent},
     {path: 'cart', component: CartComponent},
     {path: 'checkout', component: CheckoutComponent},

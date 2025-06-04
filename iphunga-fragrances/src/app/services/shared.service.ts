@@ -13,7 +13,7 @@ export class SharedService {
   }
 
   set(key: string, value:any, sessionType:string) {
-    const data = sessionType === 'session' ? sessionStorage.setItem(key, value) : localStorage.setItem(key, value)
+    const data = sessionType === 'session' ? sessionStorage.setItem(key, JSON.stringify(value)) : localStorage.setItem(key, JSON.stringify(value))
     return data
   }
 }
